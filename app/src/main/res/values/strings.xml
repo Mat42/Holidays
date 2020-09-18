@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Jours Fériés</string>
+    <string name="saturday">Samedi</string>
+    <string name="friday">Vendredi</string>
+    <string name="thursday">Jeudi</string>
+    <string name="tuesday">Mardi</string>
+    <string name="wednesday">Mercredi</string>
+    <string name="monday">Lundi</string>
+    <string name="sunday">Dimanche</string>
+    <string name="december">Décembre</string>
+    <string name="november">Novembre</string>
+    <string name="october">Octobre</string>
+    <string name="september">Septembre</string>
+    <string name="august">Août</string>
+    <string name="july">Juillet</string>
+    <string name="june">Juin</string>
+    <string name="may">Mai</string>
+    <string name="april">Avril</string>
+    <string name="march">Mars</string>
+    <string name="february">Février</string>
+    <string name="january">Janvier</string>
 </resources>

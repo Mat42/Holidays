@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+        <import alias="DateExtensions" type="com.molette.app.joursferies.core.common.extensions.DateExtensionsKt" />
+        <variable
+            name="holiday"
+            type="com.molette.app.joursferies.domain.models.Holiday" />
+        <variable
+            name="weekday"
+            type="String" />
+        <variable
+            name="day"
+            type="String" />
+        <variable
+            name="month"
+            type="String" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="145dp"
+        android:orientation="horizontal"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:id="@+id/holiday_day"
+            android:layout_width="150dp"
+            android:textAlignment="center"
+            android:layout_height="40dp"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@{DateExtensions.getWeekDay(holiday.date, context)}"
+            android:textStyle="normal"
+            android:textSize="24sp"/>
+
+        <TextView
+            android:id="@+id/holiday_day_date"
+            android:layout_width="150dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/holiday_day"
+            android:layout_height="50dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:text="@{DateExtensions.getDay(holiday.date)}"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="34sp"/>
+
+        <TextView
+            android:id="@+id/holiday_month"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:text="@{DateExtensions.getMonth(holiday.date, context)}"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/holiday_day_date" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="@{holiday.name}"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/holiday_day"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/holiday_month"
+            android:orientation="horizontal"></LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

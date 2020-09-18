@@ -1,7 +1,9 @@
 package com.molette.app.joursferies.domain.models
 
+import java.util.*
+
 data class Holiday(
-    val date: String,
+    val date: Date,
     val name: String
 ) {
 }
